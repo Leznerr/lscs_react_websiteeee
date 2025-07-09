@@ -1,0 +1,57 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Keyframes from original CSS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* For the Hero background image animation */
+@keyframes moving {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; } /* Adjust as needed for desired movement */
+}
+
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    /* THIS IS THE GLOBAL BACKGROUND IMAGE */
+    background: url('/faded_gallery-OfdOEdGYiuk-unsplash copy.jpg') center/cover no-repeat fixed; /* <-- USE YOUR NEW IMAGE NAME AND CORRECT PATH */
+    background-attachment: fixed;
+}
+
+/* Smooth scrolling - applied globally to HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Define fadeIn animation utility classes - Tailwind v3 way */
+/* You can also define custom animations in tailwind.config.js */
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-fadeInUp.delay-100 { animation-delay: 0.1s; }
+.animate-fadeInUp.delay-200 { animation-delay: 0.2s; }
+.animate-fadeInUp.delay-300 { animation-delay: 0.3s; }
+.animate-fadeInUp.delay-400 { animation-delay: 0.4s; }
+.animate-fadeInUp.delay-500 { animation-delay: 0.5s; }
+
+/* Specific fixes for original styles that were on html or body */
+html, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
